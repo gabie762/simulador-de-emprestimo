@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListaProdutosScreen renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "maxWidth": 600,
+      "padding": 20,
+      "width": "100%",
+    }
+  }
+>
+   
+  <Text
+    style={
+      {
+        "color": "#0066B3",
+        "fontFamily": "Caixa",
+        "fontSize": 28,
+        "fontWeight": "bold",
+        "marginBottom": 20,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    Produtos Cadastrados
+  </Text>
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+        "paddingHorizontal": 20,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#666",
+          "fontSize": 16,
+          "marginBottom": 20,
+          "textAlign": "center",
+        }
+      }
+    >
+      Nenhum produto cadastrado.
+    </Text>
+    <View
+      accessibilityState={
+        {
+          "busy": undefined,
+          "checked": undefined,
+          "disabled": undefined,
+          "expanded": undefined,
+          "selected": undefined,
+        }
+      }
+      accessibilityValue={
+        {
+          "max": undefined,
+          "min": undefined,
+          "now": undefined,
+          "text": undefined,
+        }
+      }
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#F7941E",
+          "borderRadius": 8,
+          "marginBottom": 10,
+          "opacity": 1,
+          "padding": 15,
+          "width": "100%",
+        }
+      }
+      testID="restaurar-produtos-button"
+    >
+      <Text
+        style={
+          {
+            "color": "#FFFFFF",
+            "fontFamily": "Caixa",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Restaurar Produtos Padrão
+      </Text>
+    </View>
+  </View>
+</View>
+`;

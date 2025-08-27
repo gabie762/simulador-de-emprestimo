@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundScreen renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flex": 1,
+      "justifyContent": "center",
+      "padding": 20,
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "marginBottom": 15,
+      }
+    }
+  >
+    This screen does not exist.
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#0066B3",
+        "fontSize": 16,
+        "textDecorationLine": "underline",
+      }
+    }
+  >
+    Go to home screen!
+  </Text>
+</View>
+`;

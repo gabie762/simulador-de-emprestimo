@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeScreen renders correctly 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "justifyContent": "flex-start",
+      "maxWidth": 600,
+      "padding": 20,
+      "width": "100%",
+    }
+  }
+>
+  <Text
+    style={
+      {
+        "color": "#0066B3",
+        "fontFamily": "Caixa",
+        "fontSize": 28,
+        "fontWeight": "bold",
+        "marginBottom": 20,
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    Simulador de Empréstimos
+  </Text>
+  <Text
+    style={
+      {
+        "color": "#F7941E",
+        "fontFamily": "Caixa",
+        "fontSize": 18,
+        "marginBottom": 40,
+        "textAlign": "center",
+      }
+    }
+  >
+    O que você gostaria de fazer?
+  </Text>
+  <View
+    accessibilityLabel="Cadastrar Produto"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#0066B3",
+        "borderRadius": 8,
+        "marginBottom": 10,
+        "opacity": 1,
+        "padding": 15,
+        "width": "100%",
+      }
+    }
+    testID="navigate-cadastro"
+  >
+    <Text
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Caixa",
+          "fontSize": 18,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Cadastrar Produto
+    </Text>
+  </View>
+  <View
+    accessibilityLabel="Listar Produtos"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#0066B3",
+        "borderRadius": 8,
+        "marginBottom": 10,
+        "opacity": 1,
+        "padding": 15,
+        "width": "100%",
+      }
+    }
+    testID="navigate-listaProdutos"
+  >
+    <Text
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Caixa",
+          "fontSize": 18,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Listar Produtos
+    </Text>
+  </View>
+  <View
+    accessibilityLabel="Nova Simulação"
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#0066B3",
+        "borderRadius": 8,
+        "marginBottom": 10,
+        "opacity": 1,
+        "padding": 15,
+        "width": "100%",
+      }
+    }
+    testID="navigate-simulacao"
+  >
+    <Text
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontFamily": "Caixa",
+          "fontSize": 18,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Nova Simulação
+    </Text>
+  </View>
+</View>
+`;
