@@ -1,50 +1,286 @@
-# Welcome to your Expo app 👋
+# 💳 Simulador de Crédito
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Um aplicativo móvel moderno e intuitivo para simulação de empréstimos e crédito pessoal, desenvolvido com React Native e Expo.
 
-## Get started
+![Versão](https://img.shields.io/badge/versão-1.0.0-blue.svg)
+![React Native](https://img.shields.io/badge/React%20Native-0.79.5-green.svg)
+![Expo](https://img.shields.io/badge/Expo-~53.0.20-black.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)
 
-1. Install dependencies
+## 📱 Funcionalidades
 
-   ```bash
-   npm install
-   ```
+- **🏠 Tela Inicial** - Interface limpa e intuitiva
+- **🔐 Sistema de Login** - Autenticação segura de usuários
+- **➕ Cadastro de Produtos** - Adicione novos produtos de crédito
+- **📋 Listagem de Produtos** - Visualize todos os produtos disponíveis
+- **🧮 Simulação de Empréstimos** - Calcule parcelas e juros em tempo real
+- **📊 Detalhamento Completo** - Visualize memória de cálculo detalhada
+- **💾 Armazenamento Local** - Dados salvos localmente com AsyncStorage
+- **🌐 API Ready** - Preparado para integração com backend
 
-2. Start the app
+## 🚀 Tecnologias
 
-   ```bash
-   npx expo start
-   ```
+- **React Native** 0.79.5
+- **Expo** ~53.0.20
+- **TypeScript** para tipagem estática
+- **Expo Router** para navegação
+- **AsyncStorage** para persistência local
+- **React Native Reanimated** para animações
+- **Jest** para testes unitários
 
-In the output, you'll find options to open the app in a
+## 📦 Instalação
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Pré-requisitos
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Node.js (versão 18 ou superior)
+- npm ou yarn
+- Expo CLI
+- Android Studio (para Android) ou Xcode (para iOS)
 
-## Get a fresh project
+### Passos para Instalação
 
-When you're ready, run:
-
+1. **Clone o repositório:**
 ```bash
-npm run reset-project
+git clone https://github.com/gabie762/simulador-de-emprestimo.git
+cd simulador-de-emprestimo
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. **Instale as dependências:**
+```bash
+npm install
+# ou
+yarn install
+```
 
-## Learn more
+3. **Inicie o servidor de desenvolvimento:**
+```bash
+npm start
+# ou
+yarn start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. **Execute no dispositivo/emulador:**
+```bash
+# Android
+npm run android
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+# iOS
+npm run ios
 
-## Join the community
+# Web
+npm run web
+```
 
-Join our community of developers creating universal apps.
+## 🎮 Como Usar
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 1. **Login**
+- Acesse o aplicativo com suas credenciais
+- O sistema mantém você logado automaticamente
+
+### 2. **Gerenciar Produtos**
+- **Cadastrar**: Adicione novos produtos de crédito definindo nome, taxa de juros anual e prazo máximo
+- **Listar**: Visualize todos os produtos cadastrados
+- **Excluir**: Remova produtos que não são mais oferecidos
+
+### 3. **Simular Empréstimo**
+- Selecione um produto de crédito
+- Informe o valor desejado
+- Defina o prazo em meses
+- Visualize o resultado detalhado com:
+  - Valor da parcela mensal
+  - Total a pagar
+  - Total de juros
+  - Memória de cálculo mês a mês
+
+## 🏗️ Arquitetura
+
+O projeto segue uma arquitetura modular e escalável:
+
+```
+simulador-credito/
+├── app/                    # Páginas e navegação (Expo Router)
+├── components/             # Componentes reutilizáveis
+├── screens/               # Telas principais da aplicação
+├── contexts/              # Context API (AuthContext)
+├── types/                 # Definições TypeScript
+├── styles/                # Estilos organizados
+├── utils/                 # Funções utilitárias e APIs
+├── hooks/                 # Custom hooks
+└── __tests__/            # Testes unitários
+```
+
+### 🔧 Principais Módulos
+
+- **📱 Screens**: Telas principais (Login, Simulação, Cadastro, Lista)
+- **🧩 Components**: Componentes reutilizáveis (Modais, Seletores, Ícones)
+- **🎨 Styles**: Estilos globais e específicos organizados
+- **🔧 Utils**: Cálculos financeiros e integração com API
+- **📝 Types**: Interfaces TypeScript para type safety
+
+## 🧮 Cálculos Financeiros
+
+O aplicativo utiliza a **Tabela Price** (Sistema Francês) para cálculo de financiamentos:
+
+- **Taxa mensal**: `Taxa anual / 12 / 100`
+- **Parcela**: `P = PV × [(1+i)^n × i] / [(1+i)^n - 1]`
+- **Onde**: P = Parcela, PV = Valor Presente, i = Taxa, n = Períodos
+
+## 🌐 Integração com API
+
+O aplicativo suporta dois modos de operação:
+
+### Modo Mock (Padrão)
+- Dados salvos localmente (AsyncStorage)
+- Cálculos realizados no dispositivo
+- Funciona offline
+- Ideal para desenvolvimento e testes
+
+### Modo API Real
+- Integração com backend
+- Cálculos no servidor
+- Sincronização entre dispositivos
+- Para configurar: altere `USE_REAL_API = true` em `utils/apiConfig.ts`
+
+### Endpoints Necessários
+```
+GET    /produtos           # Listar produtos
+POST   /produtos           # Cadastrar produto
+POST   /simulacoes         # Realizar simulação
+DELETE /produtos/:id       # Excluir produto
+```
+
+## 🧪 Testes
+
+O projeto inclui testes unitários abrangentes:
+
+```bash
+# Executar todos os testes
+npm test
+
+# Executar com coverage
+npm run test -- --coverage
+
+# Executar em modo watch
+npm run test -- --watch
+```
+
+### Cobertura de Testes
+- ✅ Componentes React
+- ✅ Telas principais
+- ✅ Funções utilitárias
+- ✅ Cálculos financeiros
+- ✅ Integração com AsyncStorage
+
+## 📱 Plataformas Suportadas
+
+- **📱 iOS** (iPhone/iPad)
+- **🤖 Android** (Smartphones/Tablets)
+- **🌐 Web** (PWA)
+
+## 🎨 Design System
+
+O aplicativo segue as diretrizes visuais da CAIXA:
+
+- **Cores**: Paleta oficial CAIXA (azul, laranja)
+- **Tipografia**: Fontes CAIXA e sistema
+- **Componentes**: Design consistente e acessível
+- **Animações**: Transições suaves com Reanimated
+
+## 🔧 Scripts Disponíveis
+
+```json
+{
+  "start": "expo start",              # Inicia o servidor de desenvolvimento
+  "android": "expo start --android",  # Executa no Android
+  "ios": "expo start --ios",         # Executa no iOS
+  "web": "expo start --web",         # Executa na web
+  "test": "jest",                    # Executa os testes
+  "lint": "expo lint",               # Analisa o código
+  "reset-project": "node ./scripts/reset-project.js"
+}
+```
+
+## 🚀 Deploy
+
+### Build para Produção
+
+```bash
+# Android (APK)
+expo build:android
+
+# iOS (IPA)
+expo build:ios
+
+# Web (Static)
+expo export:web
+```
+
+### EAS Build (Recomendado)
+
+```bash
+# Configurar EAS
+eas build:configure
+
+# Build Android
+eas build -p android
+
+# Build iOS
+eas build -p ios
+```
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+### Diretrizes
+
+- Mantenha o código limpo e bem documentado
+- Adicione testes para novas funcionalidades
+- Siga as convenções de nomenclatura existentes
+- Use TypeScript para type safety
+
+## 📋 Roadmap
+
+- [ ] **Autenticação avançada** (biometria, 2FA)
+- [ ] **Múltiplos tipos de simulação** (SAC, outros sistemas)
+- [ ] **Relatórios em PDF** 
+- [ ] **Gráficos interativos**
+- [ ] **Notificações push**
+- [ ] **Modo offline avançado**
+- [ ] **Integração com Open Banking**
+- [ ] **Internacionalização (i18n)**
+
+## 🐛 Problemas Conhecidos
+
+Consulte as [Issues](https://github.com/gabie762/simulador-de-emprestimo/issues) para problemas conhecidos e soluções.
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 👥 Equipe
+
+- **[Seu Nome]** - Desenvolvimento Full-Stack
+- **CAIXA** - Diretrizes de Design e UX
+
+## 📞 Suporte
+
+Para suporte técnico ou dúvidas:
+
+- 📧 Email: [seu-email@caixa.gov.br](mailto:seu-email@caixa.gov.br)
+- 🐛 Issues: [GitHub Issues](https://github.com/gabie762/simulador-de-emprestimo/issues)
+- 📖 Documentação: Consulte os arquivos `.md` no repositório
+
+---
+
+<div align="center">
+  <img src="./assets/images/caixa_2cores_positiva.png" alt="CAIXA Logo" width="200">
+  <br>
+  <strong>Desenvolvido com ❤️ para a CAIXA Econômica Federal</strong>
+</div>
